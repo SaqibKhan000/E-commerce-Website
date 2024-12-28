@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Website</title>
+    <!-- favicon-Link  -->
+    <link rel="shortcut icon" href="./Products-Images/Favicon.png" type="image/x-icon">
+
+    <!-- font-awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- bootstrap-CSS-CDN  -->
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <!-- custom-CSS-link  -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar section start--------------------------------------- -->
+    <nav class="navbar navbar-expand-lg fixed-top container">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="./Products-Images/logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars" id="menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto text-center mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="flink" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product1.html">Product Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+
+
+                <div class="ibtns">
+                    <a href="cart.html"><i class="fa-solid fa-cart-shopping no"></i></a>
+                    <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+
+                    <span data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#loginBackdrop">
+                        Login
+                    </button>
+
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#signupBackdrop">
+                        SignUp
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- signup-Modal-start -->
+    <div class="modal fade" id="signupBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="signupBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" id="signupBackdropLabel">SignUp <span> Form</span></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Name</label>
+                            <input type="name" class="form-control" id="exampleInputEmail1" placeholder="name" required
+                                aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="email address"
+                                required aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" placeholder="password" required
+                                id="exampleInputPassword1">
+                        </div>
+                        <button type="submit" class="btn formbtn">SignUp</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- signup-Modal-end ---------->
+
+    <!-- Login-Modal-start -->
+    <div class="modal fade" id="loginBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="loginBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" id="loginBackdropLabel">Login <span> Form</span></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" placeholder="email address" required
+                                id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" placeholder="password" required
+                                id="exampleInputPassword1">
+                        </div>
+                        <button type="submit" class="btn formbtn">Login</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- login-modal-end ---------- -->
+
+    <!-- magnifying-glass start------------------------------- -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control shadow-lg fs-3" placeholder="Search here">
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary glass">Search</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  <!-- magnifying-glass end------------------------------- -->
+    <!-- Navbar section end ---------------------------------------- -->
+
+
+
+
+
+
+
+
+
+    <!-- shopone section start------------------------------------------------ -->
+    <section>
+        <div class="shopone">
+            <img src="./Products-Images/offer.png" id="shopoff" alt="">
+            <div class="container">
+                <h1><span>Our</span> Products</h1>
+                <p>Here you can check out our new products with fair price on rymo.</p>
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 col-12">
+                        <a href="product1.html">
+                            <div class="card" style="width: 18rem;">
+                                <img src="./Products-Images/shop1.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star no"></i><i class="fa-solid fa-star no"></i><i
+                                        class="fa-solid fa-star no"></i>
+                                    <h3>T-Shirt</h3>
+                                    <h4>$92.00 <i class="fa-solid fa-cart-shopping no"></i></h4>
+
+                                    <div class="cdr"><button class="btn btn-lg rounded-0">Buy Now</button></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="col-xl-3 col-md-6 col-12">
+                        <a href="">
+                            <div class="card" style="width: 18rem;">
+                                <img src="./Products-Images/shop2.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star no"></i>
+                                    <h3>Shoes</h3>
+                                    <h4>$50.60 <i class="fa-solid fa-cart-shopping no"></i></h4>
+
+                                    <div class="cdr"><button class="btn btn-lg rounded-0">Buy Now</button></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+
+
+                    <div class="col-xl-3 col-md-6 col-12">
+                        <a href="">
+                            <div class="card" style="width: 18rem;">
+                                <img src="./Products-Images/shop3.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star-half-stroke"></i>
+                                    <h3>Bag</h3>
+                                    <h4>$72.00 <i class="fa-solid fa-cart-shopping no"></i></h4>
+
+                                    <div class="cdr"><button class="btn btn-lg rounded-0">Buy Now</button></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+
+                    <div class="col-xl-3 col-md-6 col-12">
+                        <a href="">
+                            <div class="card" style="width: 18rem;">
+                                <img src="./Products-Images/shop4.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star no"></i><i
+                                        class="fa-solid fa-star no"></i>
+                                    <h3>Sport Boots</h3>
+                                    <h4>$90 <i class="fa-solid fa-cart-shopping no"></i></h4>
+
+                                    <div class="cdr"><button class="btn btn-lg rounded-0">Buy Now</button></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6 col-12">
+                            <a href="index.html">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="./Products-Images/shop5.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                            class="fa-solid fa-star no"></i><i class="fa-solid fa-star no"></i><i
+                                            class="fa-solid fa-star no"></i>
+                                        <h3>Hat</h3>
+                                        <h4>$92.00 <i class="fa-solid fa-cart-shopping no"></i></h4>
+
+                                        <div class="cdr"><button class="btn btn-lg rounded-0">Buy Now</button></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <div class="col-xl-3 col-md-6 col-12">
+                            <a href="">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="./Products-Images/shop6.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                            class="fa-solid fa-star no"></i>
+                                        <h3>Hooded coat</h3>
+                                        <h4>$50.60 <i class="fa-solid fa-cart-shopping no"></i></h4>
+
+                                        <div class="cdr"><button class="btn btn-lg rounded-0">Buy Now</button></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+
+
+
+                        <div class="col-xl-3 col-md-6 col-12">
+                            <a href="">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="./Products-Images/shop7.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                            class="fa-solid fa-star-half-stroke"></i>
+                                        <h3>Sport Boots</h3>
+                                        <h4>$72.00 <i class="fa-solid fa-cart-shopping no"></i></h4>
+
+                                        <div class="cdr"><button class="btn btn-lg rounded-0">Buy Now</button></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+
+
+                        <div class="col-xl-3 col-md-6 col-12">
+                            <a href="">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="./Products-Images/shop8.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                            class="fa-solid fa-star"></i><i class="fa-solid fa-star no"></i><i
+                                            class="fa-solid fa-star no"></i>
+                                        <h3>Jacket</h3>
+                                        <h4>$90 <i class="fa-solid fa-cart-shopping no"></i></h4>
+
+                                        <div class="cdr"><button class="btn btn-lg rounded-0">Buy Now</button></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+
+
+
+                        <div class="row">
+                            <div class="col-xl-3 col-md-6 col-12">
+                                <a href="index.html">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="./Products-Images/shop9.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star no"></i><i class="fa-solid fa-star no"></i><i
+                                                class="fa-solid fa-star no"></i>
+                                            <h3>Bag</h3>
+                                            <h4>$92.00 <i class="fa-solid fa-cart-shopping no"></i></h4>
+
+                                            <div class="cdr"><button class="btn btn-lg rounded-0">Buy Now</button></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+
+                            <div class="col-xl-3 col-md-6 col-12">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="./Products-Images/shop10.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                            class="fa-solid fa-star no"></i>
+                                        <h3>Watch</h3>
+                                        <h4>$50.60 <i class="fa-solid fa-cart-shopping no"></i></h4>
+
+                                        <div class="cdr"><button class="btn btn-lg rounded-0">Buy Now</button></div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="col-xl-3 col-md-6 col-12">
+                                <a href="">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="./Products-Images/shop11.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star-half-stroke"></i>
+                                            <h3>Cap</h3>
+                                            <h4>$72.00 <i class="fa-solid fa-cart-shopping no"></i></h4>
+
+                                            <div class="cdr"><button class="btn btn-lg rounded-0">Buy Now</button></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+
+
+                            <div class="col-xl-3 col-md-6 col-12">
+                                <a href="">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="./Products-Images/shop12.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star no"></i><i
+                                                class="fa-solid fa-star no"></i>
+                                            <h3>Sport Boots</h3>
+                                            <h4>$90 <i class="fa-solid fa-cart-shopping no"></i></h4>
+
+                                            <div class="cdr"><button class="btn btn-lg rounded-0">Buy Now</button></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+
+
+
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 col-12">
+                                    <a href="index.html">
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="./Products-Images/shop13.jpg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                    class="fa-solid fa-star no"></i><i
+                                                    class="fa-solid fa-star no"></i><i class="fa-solid fa-star no"></i>
+                                                <h3>Watch</h3>
+                                                <h4>$92.00 <i class="fa-solid fa-cart-shopping no"></i></h4>
+
+                                                <div class="cdr"><button class="btn btn-lg rounded-0">Buy Now</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                                <div class="col-xl-3 col-md-6 col-12">
+                                    <a href="">
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="./Products-Images/shop14.jpg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                    class="fa-solid fa-star no"></i>
+                                                <h3>Sport Boots</h3>
+                                                <h4>$50.60 <i class="fa-solid fa-cart-shopping no"></i></h4>
+
+                                                <div class="cdr"><button class="btn btn-lg rounded-0">Buy Now</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+
+
+                                <div class="col-xl-3 col-md-6 col-12">
+                                    <a href="">
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="./Products-Images/shop15.jpg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                    class="fa-solid fa-star-half-stroke"></i>
+                                                <h3>Hat</h3>
+                                                <h4>$72.00 <i class="fa-solid fa-cart-shopping no"></i></h4>
+
+                                                <div class="cdr"><button class="btn btn-lg rounded-0">Buy Now</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+
+                                <div class="col-xl-3 col-md-6 col-12">
+                                    <a href="">
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="./Products-Images/shop16.jpg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star no"></i><i
+                                                    class="fa-solid fa-star no"></i>
+                                                <h3>Shirt</h3>
+                                                <h4>$90 <i class="fa-solid fa-cart-shopping no"></i></h4>
+
+                                                <div class="cdr"><button class="btn btn-lg rounded-0">Buy Now</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+
+
+                                <div class="row">
+                                    <div class="col-xl-3 col-md-6 col-12">
+                                        <a href="index.html">
+                                            <div class="card" style="width: 18rem;">
+                                                <img src="./Products-Images/shop17.jpg" class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                        class="fa-solid fa-star no"></i><i
+                                                        class="fa-solid fa-star no"></i><i
+                                                        class="fa-solid fa-star no"></i>
+                                                    <h3>Shirt</h3>
+                                                    <h4>$92.00 <i class="fa-solid fa-cart-shopping no"></i></h4>
+
+                                                    <div class="cdr"><button class="btn btn-lg rounded-0">Buy
+                                                            Now</button></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+
+                                    <div class="col-xl-3 col-md-6 col-12">
+                                        <a href="">
+                                            <div class="card" style="width: 18rem;">
+                                                <img src="./Products-Images/shop18.jpg" class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                        class="fa-solid fa-star no"></i>
+                                                    <h3>Cap</h3>
+                                                    <h4>$50.60 <i class="fa-solid fa-cart-shopping no"></i></h4>
+
+                                                    <div class="cdr"><button class="btn btn-lg rounded-0">Buy
+                                                            Now</button></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+
+
+
+                                    <div class="col-xl-3 col-md-6 col-12">
+                                        <a href="">
+                                            <div class="card" style="width: 18rem;">
+                                                <img src="./Products-Images/shop19.jpg" class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                        class="fa-solid fa-star-half-stroke"></i>
+                                                    <h3>Shirt</h3>
+                                                    <h4>$72.00 <i class="fa-solid fa-cart-shopping no"></i></h4>
+
+                                                    <div class="cdr"><button class="btn btn-lg rounded-0">Buy
+                                                            Now</button></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+
+
+                                    <div class="col-xl-3 col-md-6 col-12">
+                                        <a href="">
+                                            <div class="card" style="width: 18rem;">
+                                                <img src="./Products-Images/shop20.jpg" class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                        class="fa-solid fa-star"></i><i
+                                                        class="fa-solid fa-star no"></i><i
+                                                        class="fa-solid fa-star no"></i>
+                                                    <h3>Dress</h3>
+                                                    <h4>$90 <i class="fa-solid fa-cart-shopping no"></i></h4>
+
+                                                    <div class="cdr"><button class="btn btn-lg rounded-0">Buy
+                                                            Now</button></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+
+
+
+                                </div>
+                            </div>
+    </section>
+    <!-- shopone section end-------------------------------------------------- -->
+
+
+
+
+
+
+
+    <!-- pagination section start ----------------------------------- -->
+    <nav aria-label="Page navigation example" id="page">
+        <ul class="pagination justify-content-center">
+            <li class="page-item"><a class="page-link bbtn" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link bbtn" href="#">Next</a></li>
+        </ul>
+    </nav>
+    <!-- pagination section end ----------------------------------- -->
+
+
+
+
+
+
+
+
+
+    <!-- footer section start---------------------------------------------- -->
+    <footer>
+        <div class="foot">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="./Products-Images/logo2.png" id="logo2" alt="">
+                        <p>This is dolor sit amet consectetur adipisicing elit. Excepturi ut impedit velit voluptate
+                            ab, nemo dolorum veritatis quos ex debitis minus illum iste officia dolor magnam,
+                            necessitatibus blanditiis id commodi.</p>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h2>Featured</h2>
+                        <div class="feature">
+                            <p>MEN</p>
+                            <p>WOMEN</p>
+                            <p>BOYS</p>
+                            <p>GIRLS</p>
+                            <p>NEW ARRIVALS</p>
+                            <p>SHOES</p>
+                            <p>CLOTHES</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h2>Contact Us</h2>
+                        <h4>ADDRESS</h4>
+                        <p>123, STREET NAME, CITY, US</p>
+                        <h4>PHONE</h4>
+                        (123) 456-7890
+                        <h4>EMAIL</h4>
+                        <p>saqib@gmail.com</p>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h2>Instagram</h2>
+                        <img src="./Products-Images/insta1.jpg" class="ins" alt="">
+                        <img src="./Products-Images/insta2.jpg" class="ins" alt="">
+                        <img src="./Products-Images/insta3.jpg" class="ins" alt="">
+                        <img src="./Products-Images/insta4.jpg" class="ins" alt="">
+                        <img src="./Products-Images/insta5.jpg" class="ins" alt="">
+                        <img src="./Products-Images/insta6.jpg" class="ins" alt="">
+                    </div>
+
+                </div>
+
+                <div class="row mt-5" id="sfoot">
+                    <div class="col-md-4"><img src="./Products-Images/brandlogosss.png" id="brandedlogos" alt=""></div>
+                    <div class="col-md-4">
+                        <p>rymo eCommerce &copy: 2024. All Rights Reserved</p>
+                    </div>
+                    <div class="col-md-4"><i class="fa-brands fa-facebook"></i><i class="fa-brands fa-twitter"></i><i
+                            class="fa-brands fa-linkedin-in"></i></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer section end------------------------------------------------ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- bootstrap-JS-CDN  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,2889 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: rgb(243, 74, 13);
+    color: white;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+        background-color: white;
+}
+::-webkit-scrollbar-thumb{
+     border-radius: 15px;
+     background-color: rgb(209, 61, 7);
+}
+body{
+    height: 100vh;
+    width: 100%;
+    z-index: 1000;
+}
+.spin{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+.main::before{
+    content: "";
+    background-color: #f8f1f2;
+    z-index: 10000000000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: hide 3s linear 1s forwards;
+  }
+  .dot-spinner {
+      z-index: 2000000000000;
+      animation: hide 3s linear 1s forwards;
+      --uib-size: 10rem;
+      --uib-speed: .9s;
+      --uib-color: #183153;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: var(--uib-size);
+    width: var(--uib-size);
+}
+@keyframes hide {
+  0%{
+      display: block;
+  }
+  100%{
+     display: none;
+  }
+}
+  
+  .dot-spinner__dot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .dot-spinner__dot::before {
+    content: '';
+    height: 20%;
+    width: 20%;
+    border-radius: 50%;
+    background-color: var(--uib-color);
+    transform: scale(0);
+    opacity: 0.5;
+    animation: pulse0112 calc(var(--uib-speed) * 1.111) ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(18, 31, 53, 0.3);
+}
+  
+  .dot-spinner__dot:nth-child(2) {
+    transform: rotate(45deg);
+  }
+  
+  .dot-spinner__dot:nth-child(2)::before {
+    animation-delay: calc(var(--uib-speed) * -0.875);
+  }
+  
+  .dot-spinner__dot:nth-child(3) {
+    transform: rotate(90deg);
+  }
+  
+  .dot-spinner__dot:nth-child(3)::before {
+    animation-delay: calc(var(--uib-speed) * -0.75);
+  }
+  
+  .dot-spinner__dot:nth-child(4) {
+    transform: rotate(135deg);
+  }
+  
+  .dot-spinner__dot:nth-child(4)::before {
+    animation-delay: calc(var(--uib-speed) * -0.625);
+  }
+  
+  .dot-spinner__dot:nth-child(5) {
+    transform: rotate(180deg);
+  }
+  
+  .dot-spinner__dot:nth-child(5)::before {
+    animation-delay: calc(var(--uib-speed) * -0.5);
+  }
+  
+  .dot-spinner__dot:nth-child(6) {
+    transform: rotate(225deg);
+  }
+  
+  .dot-spinner__dot:nth-child(6)::before {
+    animation-delay: calc(var(--uib-speed) * -0.375);
+  }
+  
+  .dot-spinner__dot:nth-child(7) {
+    transform: rotate(270deg);
+  }
+  
+  .dot-spinner__dot:nth-child(7)::before {
+    animation-delay: calc(var(--uib-speed) * -0.25);
+  }
+  
+  .dot-spinner__dot:nth-child(8) {
+    transform: rotate(315deg);
+  }
+  
+  .dot-spinner__dot:nth-child(8)::before {
+    animation-delay: calc(var(--uib-speed) * -0.125);
+  }
+  
+  @keyframes pulse0112 {
+    0%,
+    100% {
+      transform: scale(0);
+      opacity: 0.5;
+    }
+  
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+
+
+/* navbar section start ------------------------------ */
+nav {
+    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.493);
+    width: 100%;
+    border-radius: 40px;
+    background-color: rgba(255, 255, 255, 0.897);
+}
+
+nav #menu {
+    font-size: 25px;
+    transform: translateY(-2px);
+    border: none;
+    color: white;
+}
+
+nav .navbar-toggler {
+    border: none;
+    background-color: rgba(247, 97, 42, 0.925);
+    padding: 10px 15px;
+}
+
+nav .navbar-toggler:active {
+    scale: .8;
+}
+
+nav .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+nav .nav-link {
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 20px;
+    position: relative;
+    transition: all .5s ease;
+}
+
+nav .nav-item #flink {
+    font-weight: 500;
+}
+
+nav .nav-item #flink:hover {
+    color: rgb(243, 74, 13);
+}
+
+nav .nav-link:hover {
+    color: rgb(243, 74, 13);
+}
+
+nav i {
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.705);
+    cursor: pointer;
+    transform: translateY(10px);
+    transition: all .5s ease;
+}
+
+nav i:hover {
+    color: rgb(243, 74, 13);
+}
+
+nav .ibtns i,
+button {
+    margin: 0 20px;
+}
+
+nav .ibtns button {
+    background-color: rgb(243, 74, 13);
+    border: none;
+    color: white;
+    font-size: 19px;
+}
+
+nav .ibtns button:hover {
+    background-color: rgba(145, 48, 13, 0.692);
+    color: white;
+}
+
+nav .ibtns button:active {
+    background-color: black;
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.692);
+}
+
+.modal .modal-body {
+    background-color: rgba(71, 25, 8, 0.062);
+}
+
+.modal .formbtn {
+    background-color: rgb(243, 74, 13);
+    border: none;
+    color: white;
+    font-size: 19px;
+}
+
+.modal .formbtn:hover {
+    background-color: rgba(145, 48, 13, 0.692);
+    color: white;
+}
+
+.modal form input {
+    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.466);
+}
+
+.modal .formbtn:active {
+    background-color: black;
+}
+
+.modal form label {
+    font-size: 20px;
+    color: black;
+}
+
+.modal .modal-header h1 {
+    font-size: 40px;
+    font-weight: bolder;
+    color: black;
+}
+
+.modal .modal-header h1 span {
+    color: rgb(243, 74, 13);
+}
+
+.ibtns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.glass {
+    background-color: rgb(255, 68, 0);
+    color: white;
+    border: none;
+    transition: all .5s ease;
+}
+
+.glass:hover {
+    background-color: black;
+}
+
+@media screen and (max-width: 500px) {
+    #logo1 {
+        width: 50%;
+    }
+
+    nav #menu {
+        font-size: 20px;
+    }
+
+    nav .ibtns button {
+        font-size: 10px;
+        margin: 5px;
+    }
+}
+@media screen and (min-width: 992px) and (max-width: 1200px){
+    nav .nav-link{
+        font-size: 13px;
+    }
+    nav .ibtns button {
+        font-size: 10px;
+        margin: 2px;
+    }
+}
+/* navbar section end -------------------------------- */
+
+
+
+
+
+
+
+/* first section start ------------------------------ */
+.first {
+    width: 100%;
+}
+
+.first img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.carousel-item img {
+    filter: brightness(1);
+}
+
+.first .carousel-caption {
+    margin-bottom: 50px;
+}
+
+.first .carousel-caption h1 {
+    font-size: 70px;
+    color: white;
+    font-weight: 800;
+}
+
+.first .carousel-caption h3 {
+    font-size: 35px;
+    color: white;
+    font-weight: 700;
+}
+
+.first .carousel-caption p {
+    font-size: 20px;
+    color: white;
+}
+
+.first .carousel-caption button {
+    background-color: black;
+    font-weight: 600;
+    color: white;
+    font-size: 18px;
+    transition: all .6s ease-in-out;
+    padding: 15px 25px;
+}
+
+.first .carousel-caption button:hover {
+    background-color: wheat;
+    color: black;
+}
+
+.first .carousel-caption span {
+    color: orangered;
+}
+
+@media screen and (max-width: 500px) {
+    .first .carousel-caption h1 {
+        font-size: 50px;
+        color: white;
+        font-weight: 700;
+    }
+
+    .first .carousel-caption h3 {
+        font-size: 30px;
+        color: white;
+        font-weight: 600;
+    }
+
+    .first .carousel-caption p {
+        font-size: 16px;
+        color: white;
+    }
+
+    .first .carousel-caption button {
+        background-color: black;
+        font-weight: 500;
+        color: white;
+        font-size: 16px;
+        transition: all .6s ease-in-out;
+        padding: 8px 18px;
+    }
+}
+
+/* first section end ------------------------------ */
+
+
+
+
+
+
+
+
+
+/* second section start --------------------------- */
+.second {
+    width: 100%;
+    margin: 100px 0;
+    text-align: center;
+}
+
+.second img {
+    cursor: pointer;
+    width: 100%;
+}
+
+/* second section end-- --------------------------- */
+
+
+
+
+
+
+
+
+
+/* third section start -------------------------- */
+.third {
+    width: 100%;
+    margin: 50px 0;
+}
+
+.third .thrimage {
+    width: 500px;
+    aspect-ratio: 1;
+    position: relative;
+}
+
+.third .thrimage img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.third .thrimg h1 {
+    color: black;
+    font-weight: 700;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.third .thrimg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 96%;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    transition: all .5s ease;
+}
+
+.third .thrimg:hover {
+    background-color: rgba(243, 74, 13, 0.411);
+}
+
+.third .thrimg button {
+    background-color: rgba(0, 0, 0, 0.808);
+    color: white;
+    font-weight: 500;
+    margin-top: 50px;
+}
+
+.third .thrimg button:hover {
+    background-color: white;
+    color: black;
+}
+
+@media screen and (max-width: 500px) {
+    .third .thrimg h1 {
+        font-size: 25px;
+    }
+}
+
+/* third section end -------------------------- */
+
+
+
+
+
+
+
+
+
+/* fourth section start -------------------------- */
+.fourth {
+    margin: 140px 0;
+    width: 100%;
+    position: relative;
+}
+
+.fourth #ws {
+    position: absolute;
+    width: 40%;
+    top: -150px;
+    right: 80px;
+    z-index: -10;
+    opacity: .2;
+    transform: rotate(15deg);
+}
+
+.fourth #lws {
+    position: absolute;
+    width: 40%;
+    top: -150px;
+    left: 0px;
+    z-index: -10;
+    opacity: .2;
+    transform: rotate(-15deg);
+}
+
+.fourth .h1 {
+    font-size: 60px;
+    position: relative;
+    color: black;
+    font-weight: 800;
+    border-bottom: 1px solid rgb(243, 74, 13);
+}
+
+.fourth p {
+    font-size: 20px;
+    color: black;
+}
+
+.fourth .card {
+    border: none;
+    margin: 50px auto;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.fourth .card img {
+    object-fit: cover;
+}
+
+.fourth .card i {
+    color: orange;
+    font-size: 23px;
+    margin-top: 10px;
+}
+
+.fourth .card i:hover {
+    color: orange;
+    cursor: pointer;
+}
+
+.fourth .card h3 {
+    font-size: 25px;
+    color: black;
+    margin: 10px 0;
+}
+
+.fourth .card h4 {
+    font-weight: bolder;
+    color: black;
+}
+
+.fourth .card .no {
+    color: black;
+}
+
+
+.fourth .cdr {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(218, 107, 3, 0.199);
+    z-index: 10;
+    width: 100%;
+    height: 110%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    opacity: 0;
+    transition: all .8s ease;
+}
+
+.fourth .cdr button {
+    background-color: rgb(255, 68, 0);
+    color: white;
+    font-weight: 500;
+    font-size: 25px;
+    transition: all .8s ease;
+}
+
+.fourth .cdr button:hover {
+    background-color: black;
+}
+
+.fourth .card:hover .cdr {
+    opacity: 1;
+}
+
+.fourth .card:hover button {
+    transform: translateY(-50px);
+}
+
+.fourth span {
+    color: rgb(255, 68, 0);
+}
+
+@media screen and (max-width: 768px) {
+    .fourth #ws {
+        display: none;
+    }
+
+    .fourth #lws {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .fourth .h1 {
+        font-size: 50px;
+    }
+}
+
+/* fourth section end ----------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* fifth-section-start ------------------------------ */
+.fifth {
+    width: 100%;
+    background-image: url(./Products-Images/paraleximg1.jpg);
+    background-position: center 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 60vh;
+    margin: 100px 0;
+}
+
+.fifth .fifcontent {
+    position: relative;
+    top: 150px;
+}
+
+.fifth h3 {
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.fifth h1 {
+    color: white;
+    font-size: 55px;
+    font-weight: 800;
+
+}
+
+.fifth h3 {
+    color: rgb(226, 222, 222);
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.fifth span {
+    color: rgb(247, 96, 42);
+}
+
+.fifth .fifcontent button {
+    background-color: rgb(255, 68, 0);
+    color: white;
+    font-weight: 600;
+    margin-top: 18px;
+    padding: 10px 18px;
+    transition: all .5s ease-in-out;
+}
+
+.fifth .fifcontent button:hover {
+    background-color: black;
+}
+
+@media screen and (max-width: 768px) {
+    .fifth h1 {
+        font-size: 35px;
+        font-weight: 700;
+    }
+
+    .fifth h3 {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .fifth .fifcontent button {
+        font-weight: 500;
+        margin-top: 10px;
+        padding: 5px 15px;
+        font-size: 15px;
+        transition: all .5s ease-in-out;
+    }
+
+    .fifth {
+        width: 100%;
+        background-image: url(./Products-Images/paraleximg1.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        height: 80vh;
+        margin: 100px 0;
+    }
+}
+@media screen and (max-width: 1570px) {
+    .fifth {
+        width: 100%;
+        background-image: url(./Products-Images/paraleximg1.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        height: 80vh;
+        margin: 100px 0;
+    }
+}
+
+/* fifth-section-end ------------------------------ */
+
+
+
+
+
+
+
+
+
+
+
+/* sixth section start ------------------------------------ */
+.seventh {
+    width: 100%;
+    margin: 100px 0;
+    position: relative;
+}
+
+.seventh .card img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.seventh .card {
+    text-align: center;
+}
+
+.seventh h1 {
+    font-size: 60px;
+    position: relative;
+    color: black;
+    font-weight: 800;
+    border-bottom: 1px solid rgb(243, 74, 13);
+}
+
+.seventh p {
+    font-size: 20px;
+    color: black;
+}
+
+.seventh .card {
+    border: none;
+    margin: 50px auto;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.seventh .card img {
+    object-fit: cover;
+}
+
+.seventh .card i {
+    color: orange;
+    font-size: 23px;
+    margin-top: 10px;
+}
+
+.seventh .card i:hover {
+    color: orange;
+    cursor: pointer;
+}
+
+.seventh .card h3 {
+    font-size: 25px;
+    color: black;
+    margin: 10px 0;
+}
+
+.seventh .card h4 {
+    font-weight: bolder;
+    color: black;
+}
+
+.seventh .card .no {
+    color: black;
+}
+
+
+.seventh .cdr {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(218, 107, 3, 0.199);
+    z-index: 10;
+    width: 100%;
+    height: 110%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    opacity: 0;
+    transition: all .8s ease;
+}
+
+.seventh .cdr button {
+    background-color: rgb(255, 68, 0);
+    color: white;
+    font-weight: 500;
+    font-size: 25px;
+    transition: all .8s ease;
+}
+
+.seventh .cdr button:hover {
+    background-color: black;
+}
+
+.seventh .card:hover .cdr {
+    opacity: 1;
+}
+
+.seventh .card:hover button {
+    transform: translateY(-50px);
+}
+
+.seventh span {
+    color: rgb(255, 68, 0);
+}
+
+#off50 {
+    position: absolute;
+    top: -100px;
+    opacity: .3;
+    left: 200px;
+    rotate: -30deg;
+    width: 20%;
+}
+@media screen and (min-width: 768px) and (max-width: 805px){
+    .seventh .cdr button {
+        background-color: rgb(255, 68, 0);
+        color: white;
+        font-weight: 500;
+        font-size: 18px;
+        transition: all .8s ease;
+    }
+}
+@media screen and (max-width: 500px){
+    .seventh h1 {
+        font-size: 45px;
+        font-weight: 700;
+    }
+    #off50{
+        display: none;
+    }
+    
+}
+/* sixth section end ------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+
+/* seventh section start ------------------------------------ */
+.sixth {
+    width: 100%;
+    margin: 100px 0;
+    position: relative;
+}
+
+.sixth #cart {
+    position: absolute;
+    width: 18%;
+    top: -50px;
+    left: 100px;
+    z-index: -10;
+    transform: rotate(20deg);
+    opacity: .1;
+}
+
+.sixth #offer {
+    position: absolute;
+    width: 10%;
+    top: -120px;
+    left: 200px;
+    z-index: -20;
+    transform: rotate(20deg);
+    opacity: .2;
+}
+
+.sixth #rcart {
+    position: absolute;
+    width: 18%;
+    top: -50px;
+    right: 180px;
+    z-index: -10;
+    transform: rotateY(180deg);
+    rotate: -20deg;
+    opacity: .1;
+}
+
+.sixth #roffer {
+    position: absolute;
+    width: 10%;
+    top: -80px;
+    right: 300px;
+    z-index: -20;
+    transform: rotate(-20deg);
+    opacity: .2;
+}
+
+.sixth .card img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.sixth .card {
+    text-align: center;
+}
+
+.sixth h1 {
+    font-size: 60px;
+    position: relative;
+    color: black;
+    font-weight: 800;
+    border-bottom: 1px solid rgb(243, 74, 13);
+}
+
+.sixth p {
+    font-size: 20px;
+    color: black;
+}
+
+.sixth .card {
+    border: none;
+    margin: 50px auto;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.sixth .card img {
+    object-fit: cover;
+}
+
+.sixth .card i {
+    color: orange;
+    font-size: 23px;
+    margin-top: 10px;
+}
+
+.sixth .card i:hover {
+    color: orange;
+    cursor: pointer;
+}
+
+.sixth .card h3 {
+    font-size: 25px;
+    color: black;
+    margin: 10px 0;
+}
+
+.sixth .card h4 {
+    font-weight: bolder;
+    color: black;
+}
+
+.sixth .card .no {
+    color: black;
+}
+
+
+.sixth .cdr {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(218, 107, 3, 0.199);
+    z-index: 10;
+    width: 100%;
+    height: 110%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    opacity: 0;
+    transition: all .8s ease;
+}
+
+.sixth .cdr button {
+    background-color: rgb(255, 68, 0);
+    color: white;
+    font-weight: 500;
+    font-size: 25px;
+    transition: all .8s ease;
+}
+
+.sixth .cdr button:hover {
+    background-color: black;
+}
+
+.sixth .card:hover .cdr {
+    opacity: 1;
+}
+
+.sixth .card:hover button {
+    transform: translateY(-50px);
+}
+
+.sixth span {
+    color: rgb(255, 68, 0);
+}
+
+@media screen and (max-width: 500px) {
+    .sixth h1 {
+        font-size: 45px;
+        font-weight: 700;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .sixth #cart {
+        display: none;
+    }
+
+    .sixth #offer {
+        display: none;
+    }
+
+    .sixth #rcart {
+        display: none;
+    }
+
+    .sixth #roffer {
+        display: none;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 805px){
+    .sixth .cdr button {
+        background-color: rgb(255, 68, 0);
+        color: white;
+        font-weight: 500;
+        font-size: 18px;
+        transition: all .8s ease;
+    }
+}
+/* seventh section end ------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* eight section start ------------------------------------ */
+.eight {
+    width: 100%;
+    margin: 100px 0;
+}
+
+.eight .card img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.eight .card {
+    text-align: center;
+}
+
+.eight h1 {
+    font-size: 60px;
+    position: relative;
+    color: black;
+    font-weight: 800;
+    border-bottom: 1px solid rgb(243, 74, 13);
+}
+
+.eight p {
+    font-size: 20px;
+    color: black;
+}
+
+.eight .card {
+    border: none;
+    margin: 50px auto;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.eight .card img {
+    object-fit: cover;
+}
+
+.eight .card i {
+    color: orange;
+    font-size: 23px;
+    margin-top: 10px;
+}
+
+.eight .card i:hover {
+    color: orange;
+    cursor: pointer;
+}
+
+.eight .card h3 {
+    font-size: 25px;
+    color: black;
+    margin: 10px 0;
+}
+
+.eight .card h4 {
+    font-weight: bolder;
+    color: black;
+}
+
+.eight .card .no {
+    color: black;
+}
+
+.eight .cdr {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(218, 107, 3, 0.199);
+    z-index: 10;
+    width: 100%;
+    height: 110%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    opacity: 0;
+    transition: all .8s ease;
+}
+
+.eight .cdr button {
+    background-color: rgb(255, 68, 0);
+    color: white;
+    font-weight: 500;
+    font-size: 25px;
+    transition: all .8s ease;
+}
+
+.eight .cdr button:hover {
+    background-color: black;
+}
+
+.eight .card:hover .cdr {
+    opacity: 1;
+}
+
+.eight .card:hover button {
+    transform: translateY(-50px);
+}
+
+.eight span {
+    color: rgb(255, 68, 0);
+}
+@media screen and (min-width: 768px) and (max-width: 805px){
+    .eight .cdr button {
+        background-color: rgb(255, 68, 0);
+        color: white;
+        font-weight: 500;
+        font-size: 18px;
+        transition: all .8s ease;
+    }
+}
+@media screen and (max-width: 500px){
+    .eight h1 {
+        font-size: 45px;
+        font-weight: 700;
+    }
+    
+}
+/* eight section end ------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer section start --------------------------------- */
+.foot {
+    width: 100%;
+    margin-top: 30px;
+    background-color: #271f21;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80vh;
+}
+
+.foot #logo2 {
+    width: 60%;
+    margin-bottom: 40px;
+}
+
+.foot p {
+    color: rgb(216, 211, 211);
+    font-size: 14px;
+    line-height: 25px;
+    margin-right: 20px;
+}
+
+.foot h2 {
+    color: rgb(221, 216, 216);
+    font-weight: 700;
+}
+
+.foot h4 {
+    color: rgb(221, 216, 216);
+    font-weight: bold;
+    font-size: 19px;
+    margin: 20px 0;
+}
+
+.foot .ins {
+    width: 30%;
+    margin-top: 10px;
+}
+
+
+.foot #sfoot {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.foot #sfoot #brandedlogos {
+    width: 50%;
+}
+
+.foot #sfoot p {
+    color: rgb(224, 222, 222);
+    font-size: 18px;
+    width: 100%;
+}
+
+.foot #sfoot i {
+    margin: 0 20px;
+    font-size: 25px;
+    background-color: rgba(255, 255, 255, 0.822);
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: rgb(53, 50, 50);
+    transition: all .4s ease;
+}
+
+.foot #sfoot i:hover {
+    background-color: rgb(255, 68, 0);
+    color: white;
+}
+
+.foot .feature p {
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+.foot .feature p:hover {
+    color: rgb(255, 68, 0);
+}
+
+@media screen and (max-width: 768px) {
+    .foot {
+        text-align: left;
+        padding: 20px 0;
+    }
+    .foot #sfoot p {
+        margin: 20px;
+    }
+    .foot #logo2 {
+        width: 35%;
+        margin-bottom: 40px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 992px){
+    .foot #sfoot i {
+        margin: 10px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 992px){
+    .foot{
+        padding-top: 30px;
+    }
+}
+/* footer section end --------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* shopone section start -------------------------------- */
+.shopone {
+    margin-top: 200px;
+    position: relative;
+}
+
+.shopone .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shopone h1 {
+    font-size: 60px;
+    position: relative;
+    color: black;
+    font-weight: 800;
+}
+
+.shopone p {
+    margin-top: 15px;
+    font-size: 24px;
+    color: rgb(46, 46, 46);
+}
+
+.shopone .card {
+    border: none;
+    margin: 50px auto;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid rgba(128, 128, 128, 0.233);
+    overflow: hidden;
+}
+
+.shopone .card img {
+    object-fit: cover;
+}
+
+.shopone .card i {
+    color: orange;
+    font-size: 23px;
+    margin-top: 10px;
+}
+
+.shopone .card i:hover {
+    color: orange;
+    cursor: pointer;
+}
+
+.shopone .card h3 {
+    font-size: 25px;
+    color: black;
+    margin: 10px 0;
+}
+
+.shopone .card h4 {
+    font-weight: bolder;
+    color: black;
+}
+
+.shopone .card .no {
+    color: black;
+}
+
+
+.shopone .cdr {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(218, 107, 3, 0.199);
+    z-index: 10;
+    width: 100%;
+    height: 110%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    opacity: 0;
+    transition: all .8s ease;
+}
+
+.shopone .cdr button {
+    background-color: rgb(255, 68, 0);
+    color: white;
+    font-weight: 500;
+    font-size: 25px;
+    transition: all .8s ease;
+}
+
+.shopone .cdr button:hover {
+    background-color: black;
+}
+
+.shopone .card:hover .cdr {
+    opacity: 1;
+}
+
+.shopone .card:hover button {
+    transform: translateY(-50px);
+}
+
+.shopone span {
+    color: rgb(255, 68, 0);
+    border-bottom: 8px solid black;
+}
+
+.shopone a {
+    text-decoration: none;
+}
+
+#shopoff {
+    position: absolute;
+    right: 100px;
+    opacity: .3;
+    top: -150px;
+    rotate: 20deg;
+    width: 25%;
+    z-index: -10;
+}
+@media screen and (max-width: 500px){
+    .shopone h1 {
+        font-size: 45px;
+        font-weight: 700;
+    }
+    #shopoff{
+        display: none;
+    }
+}
+/* shopone section end ---------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* pagination section start ------------------------------- */
+#page {
+    margin: 50px auto;
+    width: 25%;
+    box-shadow: none;
+}
+
+#page ul li a {
+    font-size: 30px;
+    font-weight: 500;
+    color: black;
+    transition: all .6s ease-in-out;
+    border: 2px solid;
+}
+
+#page .bbtn {
+    background-color: rgba(0, 0, 0, 0.13);
+}
+
+#page ul li a:hover {
+    background-color: rgb(255, 68, 0);
+    color: white;
+}
+@media screen and (max-width: 500px){
+    #page ul li a{
+        font-size: 18px;
+    }
+}
+/* pagination section end --------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* product1 section start ------------------------------- */
+.productone {
+    margin-top: 200px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+#proonepartone {
+    background-image: url(./Products-Images/shop1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 35%;
+    animation: change 10s linear infinite alternate;
+}
+
+@keyframes change {
+    0% {
+        background-image: url(./Products-Images/shop1.jpg);
+    }
+
+    25% {
+        background-image: url(./Products-Images/productoneshirt1.jpg);
+    }
+
+    50% {
+        background-image: url(./Products-Images/productoneshirt2.jpg);
+    }
+
+    75% {
+        background-image: url(./Products-Images/productoneshirt3.jpg);
+    }
+
+    100% {
+        background-image: url(./Products-Images/shop1.jpg);
+    }
+}
+
+
+#prooneparttwo {
+    margin-left: 20px;
+}
+
+#prooneparttwo h1 {
+    font-weight: 800;
+    color: black;
+}
+
+#prooneparttwo h2 {
+    color: black;
+    font-weight: 700;
+}
+
+#prooneparttwo span {
+    color: rgb(255, 68, 0);
+}
+
+#prooneparttwo select {
+    width: 30%;
+    font-size: 24px;
+    color: black;
+    font-weight: 600;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#prooneparttwo input {
+    width: 10%;
+    font-size: 20px;
+    padding: 5px 0 5px 15px;
+    margin: 15px 0;
+}
+
+#prooneparttwo button {
+    background-color: rgb(243, 74, 13);
+    color: white;
+    font-weight: 500;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    transition: all .6s ease-in-out;
+}
+
+#prooneparttwo button:hover {
+    background-color: black;
+    color: white;
+}
+
+#prooneparttwo p {
+    color: black;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+#prooneparttwo #head2 {
+    margin-top: 10px;
+}
+
+#proonepartone img {
+    width: 200px;
+    aspect-ratio: 1;
+}
+/* product1 section end ---------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+/* product2 section end ---------------------------------- */
+
+.producttwo {
+    width: 100%;
+    margin: 130px auto;
+}
+
+#protwopartone h1 {
+    font-weight: 800;
+    color: black;
+}
+
+#protwopartone h2 {
+    color: black;
+    font-weight: 700;
+}
+
+#protwopartone span {
+    color: rgb(255, 68, 0);
+}
+
+#protwopartone select {
+    width: 30%;
+    font-size: 24px;
+    color: black;
+    font-weight: 600;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#protwopartone input {
+    width: 10%;
+    font-size: 20px;
+    padding: 5px 0 5px 15px;
+    margin: 15px 0;
+}
+
+#protwopartone button {
+    background-color: rgb(243, 74, 13);
+    color: white;
+    font-weight: 500;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    transition: all .6s ease-in-out;
+}
+
+#protwopartone button:hover {
+    background-color: black;
+    color: white;
+}
+
+#protwopartone p {
+    color: black;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+#prooneparttwo #head2 {
+    margin-top: 10px;
+}
+
+#protwoparttwo img {
+    width: 75%;
+    margin-left: 50px;
+}
+
+/* product2 section end ---------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+/* product3 section start ------------------------------- */
+.productthree {
+    width: 100%;
+    margin: 80px 0;
+}
+
+#prothreepartone img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    margin-top: 60px;
+}
+
+#prothreeparttwo {
+    margin-left: 60px;
+}
+
+#prothreeparttwo h1 {
+    font-weight: 800;
+    color: black;
+}
+
+#prothreeparttwo h2 {
+    color: black;
+    font-weight: 700;
+}
+
+#prothreeparttwo span {
+    color: rgb(255, 68, 0);
+}
+
+#prothreeparttwo select {
+    width: 30%;
+    font-size: 24px;
+    color: black;
+    font-weight: 600;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#prothreeparttwo input {
+    width: 10%;
+    font-size: 20px;
+    padding: 5px 0 5px 15px;
+    margin: 15px 0;
+}
+
+#prothreeparttwo button {
+    background-color: rgb(243, 74, 13);
+    color: white;
+    font-weight: 500;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    transition: all .6s ease-in-out;
+}
+
+#prothreeparttwo button:hover {
+    background-color: black;
+    color: white;
+}
+
+#prothreeparttwo p {
+    color: black;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+#prothreeparttwo #head2 {
+    margin-top: 10px;
+}
+
+/* product3 section end ---------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* product1 section start ------------------------------- */
+.productone {
+    margin-top: 200px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+#proonepartone {
+    background-image: url(./Products-Images/shop1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 35%;
+    animation: change 10s linear infinite alternate;
+}
+
+@keyframes change {
+    0% {
+        background-image: url(./Products-Images/shop1.jpg);
+    }
+
+    25% {
+        background-image: url(./Products-Images/productoneshirt1.jpg);
+    }
+
+    50% {
+        background-image: url(./Products-Images/productoneshirt2.jpg);
+    }
+
+    75% {
+        background-image: url(./Products-Images/productoneshirt3.jpg);
+    }
+
+    100% {
+        background-image: url(./Products-Images/shop1.jpg);
+    }
+}
+
+
+#prooneparttwo {
+    margin-left: 20px;
+}
+
+#prooneparttwo h1 {
+    font-weight: 800;
+    color: black;
+}
+
+#prooneparttwo h2 {
+    color: black;
+    font-weight: 700;
+}
+
+#prooneparttwo span {
+    color: rgb(255, 68, 0);
+}
+
+#prooneparttwo select {
+    width: 30%;
+    font-size: 24px;
+    color: black;
+    font-weight: 600;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#prooneparttwo input {
+    width: 10%;
+    font-size: 20px;
+    padding: 5px 0 5px 15px;
+    margin: 15px 0;
+}
+
+#prooneparttwo button {
+    background-color: rgb(243, 74, 13);
+    color: white;
+    font-weight: 500;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    transition: all .6s ease-in-out;
+}
+
+#prooneparttwo button:hover {
+    background-color: black;
+    color: white;
+}
+
+#prooneparttwo p {
+    color: black;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+#prooneparttwo #head2 {
+    margin-top: 10px;
+}
+
+#proonepartone img {
+    width: 200px;
+    aspect-ratio: 1;
+}
+
+/* product1 section end ---------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+/* product4 section end ---------------------------------- */
+
+.producttwo {
+    width: 100%;
+    margin: 130px auto;
+}
+
+#protwopartone h1 {
+    font-weight: 800;
+    color: black;
+}
+
+#protwopartone h2 {
+    color: black;
+    font-weight: 700;
+}
+
+#protwopartone span {
+    color: rgb(255, 68, 0);
+}
+
+#protwopartone select {
+    width: 30%;
+    font-size: 24px;
+    color: black;
+    font-weight: 600;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#protwopartone input {
+    width: 10%;
+    font-size: 20px;
+    padding: 5px 0 5px 15px;
+    margin: 15px 0;
+}
+
+#protwopartone button {
+    background-color: rgb(243, 74, 13);
+    color: white;
+    font-weight: 500;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    transition: all .6s ease-in-out;
+}
+
+#protwopartone button:hover {
+    background-color: black;
+    color: white;
+}
+
+#protwopartone p {
+    color: black;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+#prooneparttwo #head2 {
+    margin-top: 10px;
+}
+
+#protwoparttwo img {
+    width: 75%;
+    margin-left: 50px;
+}
+
+/* product4 section end ---------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+/* blog1 section start --------------------------------------------- */
+.blogone {
+    width: 100%;
+    margin-top: 180px;
+    margin-bottom: 50px;
+}
+
+.blogone h1 {
+    font-weight: 800;
+    font-size: 55px;
+    margin-bottom: 50px;
+    color: black;
+}
+
+.blogone h1 span {
+    border-bottom: 6px solid rgb(255, 68, 0);
+}
+
+.blogone .blogimgpar1 {
+    width: 40%px;
+    height: 35%px;
+    overflow: hidden;
+}
+
+.blogone .blogimgpar1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .5s linear;
+    cursor: pointer;
+}
+
+.blogone .blogimgpar1 img:hover {
+    scale: 1.2;
+    rotate: -5deg;
+}
+
+.blogone .blh4 {
+    font-size: 28px;
+    color: rgba(54, 54, 54, 0.884);
+    text-align: center;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.blogone .blpara {
+    text-align: center;
+    color: rgba(75, 72, 72, 0.76);
+    font-size: 20px;
+    font-weight: 500;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+.blogone .blh4:hover {
+    color: rgb(255, 68, 0);
+}
+
+.blogone .blpara:hover {
+    color: rgb(255, 68, 0);
+}
+
+/* blog1 section end --------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* blog2 section start --------------------------------------------- */
+.blogtwo {
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.blogtwo .blogimgpar1 {
+    width: 40%px;
+    height: 35%px;
+    overflow: hidden;
+}
+
+.blogtwo .blogimgpar1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .5s linear;
+    cursor: pointer;
+}
+
+.blogtwo .blogimgpar1 img:hover {
+    scale: 1.2;
+    rotate: -5deg;
+}
+
+.blogtwo .blh4 {
+    font-size: 28px;
+    color: rgba(54, 54, 54, 0.884);
+    text-align: center;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.blogtwo .blpara {
+    text-align: center;
+    color: rgba(75, 72, 72, 0.76);
+    font-size: 20px;
+    font-weight: 500;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+.blogtwo .blh4:hover {
+    color: rgb(255, 68, 0);
+}
+
+.blogtwo .blpara:hover {
+    color: rgb(255, 68, 0);
+}
+
+/* blog2 section end --------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+/* blog3 section start ----------------------------------------- */
+.blog3 img {
+    width: 100%;
+    margin: 50px 0;
+}
+
+/* blog3 section end -------------------------------------------- */
+
+
+
+
+
+
+
+
+
+/* blog4 section start ---------------------------------------- */
+.blog4 {
+    margin: 100px 0;
+
+}
+
+.blog4 .bl4img {
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.blog4 .bl4img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .5s linear;
+    cursor: pointer;
+}
+
+.blog4 .bl4img img:hover {
+    scale: 1.2;
+    rotate: -5deg;
+}
+
+.blog4 .blh4 {
+    font-size: 23px;
+    color: rgba(54, 54, 54, 0.884);
+    text-align: center;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.blog4 .blh4:hover {
+    color: rgb(255, 68, 0);
+}
+@media screen and (max-width: 576px){
+    .blog4 .bl4img img {
+       margin-top: 50px;
+    }
+}
+@media screen and (min-width: 576px) and (max-width: 768px){
+            #down{
+                margin-top: 100px;
+            }
+}
+@media screen and (min-width: 768px) and (max-width: 992px){
+    .blog4 .bl4img img{
+                margin-bottom: 100px;
+            }
+}
+/* blog4 section end ---------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* cart1 section start --------------------------------------------- */
+.cart1 {
+    margin-top: 200px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.cart1 h1 {
+    font-size: 55px;
+    color: black;
+    font-weight: 800;
+}
+
+.cart1 h1 span {
+    border-bottom: 8px solid black;
+    color: rgb(255, 68, 0);
+}
+
+.cart1 table {
+    margin-top: 80px;
+}
+
+.cart1 .table thead th {
+    background-color: rgb(243, 74, 13);
+    color: white;
+    font-size: 25px;
+    border: 1px solid;
+    padding: 10px;
+}
+
+.cart1 i {
+    font-size: 30px;
+    margin-top: 30px;
+    color: rgba(0, 0, 0, 0.726);
+    cursor: pointer;
+}
+
+.cart1 img {
+    width: 38%;
+}
+
+.cart1 input {
+    width: 15%;
+    padding-left: 10px;
+    margin-top: 30px;
+}
+
+.cart1 .table tbody td {
+    font-size: 25px;
+    font-weight: 500;
+    align-self: center;
+    border: 1px solid rgba(0, 0, 0, 0.651);
+}
+
+.cart1 .table tbody {
+    border: 1px solid rgba(0, 0, 0, 0.651);
+}
+@media screen and (max-width: 768px){
+    .cart1 .table thead th {
+        background-color: rgb(243, 74, 13);
+        color: white;
+        font-size: 10px;
+        border: 1px solid;
+        padding: 10px;
+    }
+    
+    .cart1 i {
+        font-size: 15px;
+        margin-top: 30px;
+        color: rgba(0, 0, 0, 0.726);
+        cursor: pointer;
+    }
+    
+    .cart1 img {
+        width: 40%;
+    }
+    
+    .cart1 input {
+        width: 15%;
+        padding-left: 10px;
+        margin-top: 30px;
+    }
+    
+    .cart1 .table tbody td {
+        font-size: 10px;
+        font-weight: 500;
+        align-self: center;
+        border: 1px solid rgba(0, 0, 0, 0.651);
+    }
+    
+    .cart1 .table tbody {
+        border: 1px solid rgba(0, 0, 0, 0.651);
+    }
+}
+/* cart1 section end --------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* cart2 section start ------------------------------------------ */
+.cart2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart2 #cart2part1 {
+    text-align: center;
+    width: 40%;
+}
+
+.cart2 #cart2part1 h2 {
+    width: 100%;
+    background-color: rgb(255, 68, 0);
+    padding: 0 20px;
+    color: white;
+    font-size: 35px;
+    padding: 10px;
+}
+
+.cart2 #cart2h6 {
+    margin-top: 25px;
+    color: rgb(59, 59, 59);
+    font-size: 23px;
+}
+
+.cart2 input {
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 25px;
+}
+
+.cart2 button {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    transition: all .5s ease;
+}
+
+.cart2 button:hover {
+    background-color: rgb(255, 68, 0);
+    color: white;
+}
+
+
+.cart2 #cart2part2 {
+    margin-left: 50px;
+    text-align: center;
+}
+
+.cart2 #cart2part2 h2 {
+    width: 100%;
+    background-color: rgb(255, 68, 0);
+    padding: 0 20px;
+    color: white;
+    font-size: 35px;
+    padding: 10px;
+}
+
+.cart2 #cart2part2 h5 {
+    color: rgb(34, 34, 34);
+    font-size: 25px;
+}
+
+.cart2 #cart2part2 #orow {
+    background-color: rgba(128, 128, 128, 0.411);
+    padding: 20px 0;
+}
+
+.cart2 #cart2part2 p {
+    color: rgb(53, 52, 52);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.cart2 #cart2part2 #total {
+    font-size: 35px;
+    color: black;
+}
+
+.cart2 #cart2part2 #totalpara {
+    font-size: 35px;
+}
+@media screen and (max-width: 768px){
+    .cart2 #cart2part1 h2 {
+        width: 100%;
+        background-color: rgb(255, 68, 0);
+        padding: 0 20px;
+        color: white;
+        font-size: 23px;
+        padding: 10px;
+    }
+    
+    .cart2 #cart2h6 {
+        margin-top: 25px;
+        color: rgb(59, 59, 59);
+        font-size: 18px;
+    }
+    
+    .cart2 input {
+        font-size: 15px;
+        padding: 10px;
+        border: 2px solid gray;
+        margin-top: 25px;
+    }
+    
+    .cart2 button {
+        width: 100%;
+        background-color: black;
+        color: white;
+        font-size: 14px;
+        font-weight: 400;
+      padding: 4px;
+      margin: 15px 0;
+        transition: all .5s ease;
+    }
+    
+    
+    .cart2 #cart2part2 {
+        margin-right: 50px;
+        margin-top: 20px;
+        text-align: center;
+    }
+    
+    .cart2 #cart2part2 h2 {
+        width: 100%;
+        background-color: rgb(255, 68, 0);
+        padding: 0 20px;
+        color: white;
+        font-size: 35px;
+        padding: 10px;
+    }
+    
+    .cart2 #cart2part2 h5 {
+        color: rgb(34, 34, 34);
+        font-size: 25px;
+    }
+    
+    .cart2 #cart2part2 #orow {
+        background-color: rgba(128, 128, 128, 0.411);
+        padding: 20px 0;
+    }
+    
+    .cart2 #cart2part2 p {
+        color: rgb(53, 52, 52);
+        font-size: 18px;
+        font-weight: 500;
+    }
+    
+    .cart2 #cart2part2 #total {
+        font-size: 35px;
+        color: black;
+    }
+    
+    .cart2 #cart2part2 #totalpara {
+        font-size: 35px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1400px){
+    .cart2 #cart2part1 h2 {
+        width: 100%;
+        background-color: rgb(255, 68, 0);
+        padding: 0 20px;
+        color: white;
+        font-size: 23px;
+        padding: 10px;
+    }
+    
+    .cart2 #cart2h6 {
+        margin-top: 25px;
+        color: rgb(59, 59, 59);
+        font-size: 18px;
+    }
+    
+    .cart2 input {
+        font-size: 15px;
+        padding: 10px;
+        border: 2px solid gray;
+        margin-top: 25px;
+    }
+    
+    .cart2 button {
+        width: 100%;
+        background-color: black;
+        color: white;
+        font-size: 14px;
+        font-weight: 400;
+      padding: 4px;
+      margin: 15px 0;
+        transition: all .5s ease;
+    }
+    
+    
+    .cart2 #cart2part2 {
+        margin-right: 50px;
+        margin-top: 20px;
+        text-align: center;
+    }
+    
+    .cart2 #cart2part2 h2 {
+        width: 100%;
+        background-color: rgb(255, 68, 0);
+        padding: 0 20px;
+        color: white;
+        font-size: 35px;
+        padding: 10px;
+    }
+    
+    .cart2 #cart2part2 h5 {
+        color: rgb(34, 34, 34);
+        font-size: 25px;
+    }
+    
+    .cart2 #cart2part2 #orow {
+        background-color: rgba(128, 128, 128, 0.411);
+        padding: 20px 0;
+    }
+    
+    .cart2 #cart2part2 p {
+        color: rgb(53, 52, 52);
+        font-size: 18px;
+        font-weight: 500;
+    }
+    
+    .cart2 #cart2part2 #total {
+        font-size: 35px;
+        color: black;
+    }
+    
+    .cart2 #cart2part2 #totalpara {
+        font-size: 35px;
+    }
+}
+
+/* cart2 section end ------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* contact1 section start ----------------------------------- */
+.contact1 {
+    width: 100%;
+    /* min-height: 100vh; */
+    margin-bottom: 400px;
+    position: relative;
+}
+
+.contact1 #mobile {
+    position: absolute;
+    left: 500px;
+    top: 100px;
+    z-index: -10;
+    margin: 0 auto;
+    display: block;
+    width: 30%;
+}
+
+.contact1 .form {
+    position: relative;
+    top: 200px;
+    height: 90%;
+    width: 70%;
+    opacity: 1;
+}
+
+.contact1 h1 {
+    margin: 0 auto;
+    font-size: 60px;
+    color: black;
+    font-weight: 800;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.contact1 span {
+    color: rgb(255, 68, 0);
+    border-bottom: 8px solid black;
+}
+
+.contact1 #form1 {
+    background-color: rgba(255, 255, 255, 0.76);
+    border: 1px solid rgba(0, 0, 0, 0.288);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.contact1 #form1 h4 {
+    color: black;
+    font-size: 35px;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.contact1 #form1 p {
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 10px;
+    line-height: 30px;
+}
+
+.contact1 #form1 h6 i {
+    font-size: 35px;
+    line-height: 45px;
+    margin-right: 10px;
+    color: rgb(187, 55, 7);
+    cursor: pointer;
+}
+
+.contact1 #form1 h6 {
+    color: black;
+    font-size: 22px;
+}
+
+.contact1 #form1 h5 {
+    color: black;
+    font-size: 28px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.contact1 #form1 h5 span {
+    color: rgb(206, 60, 6);
+}
+
+.contact1 #form1 .soi {
+    font-size: 25px;
+    margin: 15px;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(255, 68, 0);
+    cursor: pointer;
+    transition: all .8s ease;
+}
+
+.contact1 #form1 .soi:hover {
+    background-color: black;
+}
+
+.contact1 #form2 {
+    background-color: rgba(243, 74, 13, 0.849);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.contact1 #form2 input {
+    margin: 30px 0;
+    background-color: transparent;
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 15px rgba(36, 35, 35, 0.541);
+}
+
+.contact1 #form2 input::placeholder {
+    color: wheat;
+}
+
+.contact1 #form2 input:focus {
+    box-shadow: none;
+}
+
+.contact1 #form2 textarea {
+    background-color: transparent;
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    border: 2px solid white;
+    padding: 10px;
+    box-shadow: 0px 0px 15px rgba(36, 35, 35, 0.541);
+    border-radius: 25px;
+}
+
+.contact1 #form2 textarea::placeholder {
+    color: wheat;
+}
+
+.contact1 #form2 textarea:focus {
+    box-shadow: none;
+}
+
+.contact1 #form2 button {
+    background-color: white;
+    color: black;
+    font-weight: 600;
+    transition: all .5s ease;
+}
+
+.contact1 #form2 button:hover {
+    background-color: black;
+    color: white;
+}
+@media screen and (max-width: 768px){
+    .contact1 #mobile {
+        position: absolute;
+        left: 500px;
+        top: 100px;
+        z-index: -10;
+        margin: 0 auto;
+        display: block;
+        width: 30%;
+        display: none;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1200px){
+    .contact1 #mobile {
+        position: absolute;
+        left: 400px;
+        top: 150px;
+        z-index: -10;
+        margin: 0 auto;
+        display: block;
+        width: 40%;
+        opacity: .4;
+    }
+}
+/* contact1 section end -------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* contact2 section start ---------------------------------------- */
+.contact2 {
+    margin-top: 200px;
+    margin-bottom: 100px;
+}
+
+.contact2 h1 {
+    font-size: 60px;
+    color: black;
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+
+.contact2 h1 span {
+    color: rgb(255, 68, 0);
+    border-bottom: 8px solid black;
+}
+
+.contact2 p {
+    font-size: 23px;
+    color: rgba(0, 0, 0, 0.856);
+    margin-top: 30px;
+}
+
+.contact2 strong {
+    color: black;
+    font-size: 25px;
+}
+
+.contact2 iframe {
+    width: 90%;
+    height: 400px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.651);
+}
+
+.contact2 a {
+    transition: all .5s ease;
+}
+
+.contact2 a:hover {
+    color: rgb(255, 68, 0);
+}
+@media screen and (max-width: 768px){
+   .contact2 iframe{
+    margin-left: 20px;
+   }
+}
+/* contact2 section end ---------------------------------------- */
