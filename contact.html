@@ -85,20 +85,21 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="ff3e3c6de-37ec-4fa7-b909-075e1de1febd">
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Name</label>
-                            <input type="name" class="form-control" id="exampleInputEmail1" placeholder="name" required
+                            <label for="name" class="form-label">Name</label>
+                            <input type="name" class="form-control" id="name" placeholder="name" required
                                 aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="email address"
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="email address"
                                 required aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" class="form-control" placeholder="password" required
+                            <label for="pass" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="pass" placeholder="password" required
                                 id="exampleInputPassword1">
                         </div>
                         <button type="submit" class="btn formbtn">SignUp</button>
@@ -191,19 +192,20 @@
                <i class="fa-brands fa-facebook-f soi"></i><i class="fa-brands fa-twitter soi"></i><i class="fa-brands fa-instagram soi"></i><i class="fa-brands fa-linkedin-in soi"></i>
                 </div>
                 <div class="col-md-6" id="form2">
-                    <form>
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="f3e3c6de-37ec-4fa7-b909-075e1de1febd">
                         <div class="mb-3">
-                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Username" aria-describedby="emailHelp">
+                          <input type="text" class="form-control" name="name" id="exampleInputEmail1" placeholder="Username" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
-                          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" aria-describedby="emailHelp">
+                          <input type="email" class="form-control" name="email" id="exampleInputEmail1" placeholder="Email" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Phone" aria-describedby="emailHelp">
+                            <input type="text" class="form-control" name="phoneNo" id="exampleInputEmail1" placeholder="Phone" aria-describedby="emailHelp">
                           </div>
                           
                           <div class="mb-3">
-                            <textarea class="form-control" placeholder="Message"></textarea>
+                            <textarea class="form-control" name="message" placeholder="Message"></textarea>
                           </div>
                        
                         <button type="submit" class="btn btn-lg">Submit</button>
@@ -323,12 +325,14 @@
                     <div class="col-md-4">
                         <p>rymo eCommerce &copy: 2024. All Rights Reserved</p>
                     </div>
-                    <div class="col-md-4"><i class="fa-brands fa-facebook"></i><i class="fa-brands fa-twitter"></i><i
-                            class="fa-brands fa-linkedin-in"></i></div>
+                    <div class="col-md-4">
+                        <a href="https://www.linkedin.com/in/saqib-khan-a64972338/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.linkedin.com/in/saqib-khan-a64972338/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/saqib-khan-a64972338/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                 </div>
             </div>
         </div>
-    </footer>
+     </footer>
     <!-- ninth section end------------------------------------------------ -->
 
 
